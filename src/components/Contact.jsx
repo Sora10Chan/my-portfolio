@@ -1,28 +1,47 @@
 import React from 'react'
+import { AtSign, Link, FileText } from 'lucide-react'
 
-export default function Contact(){
+export default function Contact() {
   return (
-    <section id="contact" className="py-16">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-2xl font-semibold">Contact</h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <div className="space-y-3">
-            <div className="text-sm text-gray-500">Email</div>
-            <div className="font-medium">your.email@example.com</div>
-
-            <div className="text-sm text-gray-500">GitHub</div>
-            <div className="font-medium">github.com/your-username</div>
-
-            <div className="text-sm text-gray-500">LinkedIn</div>
-            <div className="font-medium">linkedin.com/in/your-profile</div>
+    <section id="contact" className="section-break section-break--light">
+      <div className="layout-width contact-section">
+        <div className="contact-grid">
+          <div className="contact-panel">
+            <span className="section-label">Contact</span>
+            <h2>Get in touch.</h2>
+            <p>Currently seeking entry-level software development opportunities where I can contribute, learn, and grow as a developer.</p>
           </div>
 
-          <form className="space-y-3 bg-white dark:bg-slate-800 p-4 rounded-lg shadow">
-            <input className="w-full p-2 border rounded" placeholder="Your name" />
-            <input className="w-full p-2 border rounded" placeholder="Your email" />
-            <textarea className="w-full p-2 border rounded" rows={4} placeholder="Message" />
-            <button type="submit" className="bg-indigo-600 text-white px-4 py-2 rounded">Send</button>
-          </form>
+          <div className="contact-cards">
+            <a href="mailto:jayrondriz21@gmail.com" className="contact-card">
+              <AtSign size={20} className="contact-icon" />
+              <div>
+                <p className="contact-card-title">Email</p>
+                <p>jayrondriz21@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://github.com/Sora10Chan" className="contact-card">
+              <Link size={20} className="contact-icon" />
+              <div>
+                <p className="contact-card-title">GitHub</p>
+                <p>github.com/Sora10Chan</p>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/jayron-driz-858728326" className="contact-card">
+              <Link size={20} className="contact-icon" />
+              <div>
+                <p className="contact-card-title">LinkedIn</p>
+                <p>linkedin.com/in/jayron-driz-858728326</p>
+              </div>
+            </a>
+            <a href="/resume.pdf" className="contact-card contact-card--accent">
+              <FileText size={20} className="contact-icon" />
+              <div>
+                <p className="contact-card-title">Résumé</p>
+                <p>Download.</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>

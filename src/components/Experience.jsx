@@ -1,21 +1,35 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { experience } from '../data/experience'
 
-export default function Experience(){
+export default function Experience() {
   return (
-    <section id="experience" className="py-16">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-2xl font-semibold">Experience</h2>
-        <div className="mt-6 space-y-6">
-          <motion.div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow" initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}}>
-            <div className="text-sm text-gray-500">2025</div>
-            <div className="font-medium">Intern — Ollopa Corporation</div>
-          </motion.div>
+    <section id="experience" className="section-break section-break--cream">
+      <div className="layout-width experience-section">
+        <div className="section-heading">
+          <span className="section-label">Experience</span>
+          <h2>Experience gained through internships, academic projects, and personal development.</h2>
+          <p>
+            My journey in software development has allowed me to work on web applications, machine learning projects, and automation tools while continuously improving my technical and problem-solving skills.
+          </p>
+        </div>
 
-          <motion.div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow" initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}}>
-            <div className="text-sm text-gray-500">2026</div>
-            <div className="font-medium">BS Computer Science Graduate</div>
-          </motion.div>
+        <div className="experience-grid">
+          {experience.map((item) => (
+            <article key={`${item.title}-${item.company}`} className="experience-card">
+              <div className="experience-meta">
+                <span className="experience-year">{item.year}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.company}</p>
+                </div>
+              </div>
+              <ul className="experience-list">
+                {item.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </section>

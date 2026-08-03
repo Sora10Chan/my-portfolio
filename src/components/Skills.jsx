@@ -1,31 +1,30 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { skills } from '../data/skills'
 
-const skillList = [
-  { name: 'Python', level: 100 },
-  { name: 'Java', level: 80 },
-  { name: 'JavaScript', level: 75 },
-  { name: 'React', level: 75 },
-  { name: 'Node.js', level: 60 },
-  { name: 'TensorFlow', level: 50 },
-]
-
-export default function Skills(){
+export default function Skills() {
   return (
-    <section id="skills" className="py-16">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-2xl font-semibold">Skills</h2>
-        <div className="mt-6 grid gap-4">
-          {skillList.map(s => (
-            <motion.div key={s.name} className="w-full" initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}}>
-              <div className="flex justify-between mb-1">
-                <span className="text-sm font-medium">{s.name}</span>
-                <span className="text-sm text-gray-500">{s.level}%</span>
+    <section id="skills" className="section-break section-break--light">
+      <div className="layout-width skills-section">
+        <div className="section-heading">
+          <span className="section-label">Skills</span>
+
+          <h2>Technologies I use to build modern software.</h2>
+
+          <p>
+            A collection of programming languages, frameworks, tools, and technologies I've used throughout my academic, internship, and personal projects.
+          </p>
+        </div>
+
+        <div className="skills-grid">
+          {skills.map((category) => (
+            <article key={category.category} className="skill-card">
+              <h3>{category.category}</h3>
+              <div className="skill-tags">
+                {category.items.map((item) => (
+                  <span key={item} className="skill-tag">{item}</span>
+                ))}
               </div>
-              <div className="w-full bg-gray-200 dark:bg-slate-800 rounded-full h-3">
-                <div className="bg-indigo-600 h-3 rounded-full" style={{width: `${s.level}%`}} />
-              </div>
-            </motion.div>
+            </article>
           ))}
         </div>
       </div>

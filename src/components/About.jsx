@@ -1,20 +1,31 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 
-export default function About(){
+export default function About() {
   return (
-    <section id="about" className="py-16 bg-gray-50 dark:bg-slate-900/40">
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.h2 className="text-2xl font-semibold" initial={{opacity:0, y:8}} animate={{opacity:1, y:0}}>About Me</motion.h2>
-        <motion.p className="mt-4 text-gray-600 dark:text-gray-300" initial={{opacity:0}} animate={{opacity:1}}>
-          Short introduction describing education and interests in machine learning and web development. Fresh graduate with experience building prototypes and deploying ML models to mobile and web.
-        </motion.p>
+    <section id="about" className="section-break section-break--cream">
+      <div className="layout-width about-section">
+        <div className="about-intro">
+          <span className="section-label">About</span>
+          <h2>About Me</h2>
+          <p>
+            I'm a Computer Science graduate specializing in Intelligent Systems with hands-on experience in web development, machine learning, and software development. I enjoy building practical software that solves real-world problems and continuously improving my technical skills.
+          </p>
+          <div className="about-divider" />
+        </div>
 
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">✓ Fresh Graduate</div>
-          <div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">✓ Software Developer</div>
-          <div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">✓ Machine Learning</div>
-          <div className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">✓ Web Development</div>
+        <div className="about-cards">
+          <div className="info-card">
+            <h3>🎓 Education</h3>
+            <p>BS Computer Science<br />Intelligent Systems</p>
+          </div>
+          <div className="info-card">
+            <h3>💻 Focus</h3>
+            <p>Web Development<br />Machine Learning<br />Automation</p>
+          </div>
+          <div className="info-card">
+            <h3>📍 Status</h3>
+            <p>Open to Entry-Level<br />Software Developer Roles</p>
+          </div>
         </div>
       </div>
     </section>

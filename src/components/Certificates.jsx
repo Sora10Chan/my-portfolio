@@ -1,15 +1,21 @@
 import React from 'react'
+import { certificates } from '../data/certificates'
 
-const certs = ['IBM AI Literacy', 'Cisco Data Analytics', 'Node.js', 'Cybersecurity']
-
-export default function Certificates(){
+export default function Certificates() {
   return (
-    <section id="certificates" className="py-16 bg-gray-50 dark:bg-slate-900/40">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-2xl font-semibold">Certificates</h2>
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {certs.map(c => (
-            <div key={c} className="p-4 bg-white dark:bg-slate-800 rounded-lg shadow text-sm">{c}</div>
+    <section id="certificates" className="section-break section-break--cream">
+      <div className="layout-width certificates-section">
+        <div className="section-heading">
+          <span className="section-label">Certificates</span>
+          <h2>Certifications.</h2>
+        </div>
+
+        <div className="certificates-grid">
+          {certificates.map((cert) => (
+            <article key={cert} className="certificate-card">
+              <span className="certificate-provider">Certificate</span>
+              <h3>{cert}</h3>
+            </article>
           ))}
         </div>
       </div>
