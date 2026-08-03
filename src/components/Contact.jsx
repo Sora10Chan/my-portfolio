@@ -34,12 +34,17 @@ export default function Contact() {
                 <p>linkedin.com/in/jayron-driz-858728326</p>
               </div>
             </a>
-            <a href="/resume.pdf" className="contact-card contact-card--accent">
+            <a
+              href="https://drive.google.com/file/d/1nSIm31e5NjYARp3h_V2cJf7HmHNnc1kv/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card contact-card--accent"
+    >
               <FileText size={20} className="contact-icon" />
               <div>
                 <p className="contact-card-title">Résumé</p>
-                <p>Download.</p>
-              </div>
+                <p>View.</p>
+                </div>
             </a>
           </div>
         </div>
