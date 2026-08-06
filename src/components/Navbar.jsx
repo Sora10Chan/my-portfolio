@@ -44,10 +44,7 @@ export default function Navbar({ theme, onToggleTheme }) {
           JAYRON
         </a>
 
-        <nav
-          id="primary-navigation"
-          className={`nav-links ${menuOpen ? 'nav-open' : ''}`}
-        >
+        <nav id="primary-navigation" className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -58,22 +55,6 @@ export default function Navbar({ theme, onToggleTheme }) {
               {link.label}
             </a>
           ))}
-
-          <button
-            type="button"
-            className="theme-toggle"
-            onClick={onToggleTheme}
-            aria-label={
-              theme === 'light'
-                ? 'Switch to dark mode'
-                : 'Switch to light mode'
-            }
-          >
-            {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
-            <span className="theme-label">
-              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-            </span>
-          </button>
         </nav>
 
         <div className="nav-actions">
@@ -85,6 +66,16 @@ export default function Navbar({ theme, onToggleTheme }) {
             aria-controls="primary-navigation"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onToggleTheme}
+            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+          >
+            {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+            <span className="theme-label">{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
           </button>
         </div>
       </div>
